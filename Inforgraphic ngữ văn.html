@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infographic Tương Tác: Mấy Ý Nghĩ Về Thơ - Nguyễn Đình Thi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-paper: #fdf8ee;
+      --bg-card: #fffcf5;
+      --red-primary: #8b1e24;
+      --red-hover: #a9232b;
+      --red-soft: #f9ecec;
+      --gold-accent: #c59b27;
+      --ink-dark: #231b18;
+      --ink-muted: #5e5049;
+      --border-ornate: #decab0;
+      --shadow-book: 0 20px 50px rgba(45, 25, 15, 0.22);
+      --shadow-card: 0 8px 24px rgba(139, 30, 36, 0.08);
+      --font-size-content: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #f5ead6 0%, #e4d2b4 100%);
+      color: var(--ink-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* THANH CÔNG CỤ CỐ ĐỊNH */
+    .top-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(139, 30, 36, 0.96);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+      border-bottom: 2px solid var(--gold-accent);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-accent);
+      color: #1f140e;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn-home:hover {
+      background: #dfb438;
+      transform: translateY(-1px);
+    }
+
+    .nav-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #fdf6e4;
+    }
+
+    .controls-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .font-control-box {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      padding: 4px 10px;
+      gap: 8px;
+    }
+
+    .font-label {
+      font-size: 13px;
+      color: #f7e6c4;
+      margin-right: 2px;
+    }
+
+    .btn-font {
+      background: #fff;
+      color: var(--red-primary);
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .btn-font:hover {
+      background: var(--gold-accent);
+      color: #1a110b;
+      transform: scale(1.06);
+    }
+
+    .font-value-badge {
+      min-width: 42px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    /* CONTAINER CHÍNH */
+    .main-stage {
+      flex: 1;
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #homeView {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* TRANG BÌA (HERO COVER) */
+    .cover-banner {
+      background: linear-gradient(135deg, #fffdf8 0%, #f7ebd4 100%);
+      border: 2px solid var(--gold-accent);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--shadow-book);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 32px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 34px;
+    }
+
+    .cover-banner::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 1px dashed rgba(139, 30, 36, 0.28);
+      border-radius: 18px;
+      pointer-events: none;
+    }
+
+    .author-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .author-img-wrapper {
+      width: 210px;
+      height: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 4px solid var(--red-primary);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+      background: #e9dcc9;
+    }
+
+    .author-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .author-caption {
+      margin-top: 12px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--red-primary);
+      text-align: center;
+    }
+
+    .author-subcaption {
+      font-size: 13px;
+      color: var(--ink-muted);
+      margin-top: 2px;
+      text-align: center;
+    }
+
+    .btn-change-photo {
+      margin-top: 8px;
+      font-size: 12px;
+      background: transparent;
+      color: var(--red-primary);
+      border: 1px solid var(--red-primary);
+      padding: 4px 10px;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-change-photo:hover {
+      background: var(--red-primary);
+      color: #fff;
+    }
+
+    .cover-info {
+      z-index: 1;
+    }
+
+    .lesson-badge {
+      display: inline-block;
+      background: var(--red-primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      color: var(--red-primary);
+      line-height: 1.18;
+      margin-bottom: 10px;
+    }
+
+    .cover-author-line {
+      font-size: 18px;
+      font-weight: 600;
+      color: #3e2d26;
+      margin-bottom: 16px;
+    }
+
+    .cover-desc {
+      font-size: calc(var(--font-size-content) * 0.92);
+      line-height: 1.65;
+      color: var(--ink-muted);
+      background: rgba(255, 255, 255, 0.72);
+      border-left: 4px solid var(--gold-accent);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 16px;
+    }
+
+    .guide-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--red-primary);
+      background: var(--red-soft);
+      padding: 8px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(139, 30, 36, 0.2);
+    }
+
+    /* SƠ ĐỒ CÁC Ô ĐỎ TRONG INFOGRAPHIC */
+    .section-heading-bar {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .section-heading-bar h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--red-primary);
+      margin-bottom: 6px;
+    }
+
+    .section-heading-bar p {
+      font-size: 14px;
+      color: var(--ink-muted);
+    }
+
+    .infographic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .red-node-card {
+      background: var(--bg-card);
+      border: 2px solid rgba(139, 30, 36, 0.22);
+      border-top: 6px solid var(--red-primary);
+      border-radius: 18px;
+      padding: 22px 22px 20px;
+      box-shadow: var(--shadow-card);
+      cursor: pointer;
+      transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .red-node-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--red-primary);
+      box-shadow: 0 16px 34px rgba(139, 30, 36, 0.18);
+    }
+
+    .node-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .node-number {
+      background: var(--red-primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 4px 11px;
+      border-radius: 99px;
+    }
+
+    .node-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: #8c6614;
+      background: #fbf0d4;
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+
+    .node-red-title {
+      font-family: 'Playfair Display', serif;
+      font-size: calc(var(--font-size-content) * 1.15);
+      color: #b71c1c;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .node-preview {
+      font-size: calc(var(--font-size-content) * 0.86);
+      color: var(--ink-muted);
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .node-sub-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .sub-pill {
+      font-size: 12px;
+      color: #9e1b22;
+      background: #fcebeb;
+      border: 1px solid #f2c4c4;
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .node-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px dashed var(--border-ornate);
+      padding-top: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--red-primary);
+    }
+
+    /* CHẾ ĐỘ ĐỌC SÁCH LẬT TRANG */
+    #bookView {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .book-header-bar {
+      width: 100%;
+      max-width: 1080px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+      background: rgba(255, 252, 245, 0.9);
+      padding: 12px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border-ornate);
+    }
+
+    .book-section-select {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .section-select-dropdown {
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--red-primary);
+      background: #fff;
+      border: 1.5px solid var(--red-primary);
+      padding: 7px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .page-indicator {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink-dark);
+      background: #f5e6c8;
+      padding: 6px 14px;
+      border-radius: 99px;
+    }
+
+    /* KHUNG SÁCH MỞ 2 TRANG & HIỆU ỨNG LẬT SÁCH 3D */
+    .book-stage {
+      width: 100%;
+      max-width: 1080px;
+      perspective: 2200px;
+      position: relative;
+      margin-bottom: 22px;
+    }
+
+    .book-open {
+      width: 100%;
+      height: 620px;
+      background: var(--bg-paper);
+      border-radius: 18px;
+      box-shadow: var(--shadow-book), inset 0 0 0 2px #d8c19e;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+      border: 6px solid #6b1d1d;
+    }
+
+    .book-spine {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 36px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg,
+        rgba(80, 45, 20, 0.02) 0%,
+        rgba(80, 45, 20, 0.18) 42%,
+        rgba(45, 20, 10, 0.32) 50%,
+        rgba(80, 45, 20, 0.18) 58%,
+        rgba(80, 45, 20, 0.02) 100%);
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .book-page {
+      padding: 32px 38px 46px;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      background: radial-gradient(circle at center, #fffdf8 0%, #f9f0de 100%);
+    }
+
+    .book-page.left-page {
+      border-right: 1px solid rgba(139, 30, 36, 0.15);
+    }
+
+    .page-running-header {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8c6b53;
+      border-bottom: 1px solid #e4d3b8;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .page-body-content {
+      flex: 1;
+      overflow: hidden;
+      font-size: var(--font-size-content);
+      line-height: 1.72;
+      color: var(--ink-dark);
+      text-align: justify;
+    }
+
+    .page-footer-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--red-primary);
+      text-align: center;
+      padding-top: 10px;
+      border-top: 1px dashed #e2d1b5;
+      flex-shrink: 0;
+    }
+
+    .page-body-content h3.red-heading {
+      font-family: 'Playfair Display', serif;
+      color: #b71c1c;
+      font-size: calc(var(--font-size-content) * 1.25);
+      line-height: 1.32;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(183, 28, 28, 0.25);
+      text-align: left;
+    }
+
+    .page-body-content h4.red-subheading {
+      color: #c62828;
+      font-size: calc(var(--font-size-content) * 1.05);
+      font-weight: 700;
+      margin: 12px 0 8px;
+      background: #fbe9e7;
+      padding: 6px 12px;
+      border-left: 4px solid #b71c1c;
+      border-radius: 0 8px 8px 0;
+      text-align: left;
+    }
+
+    .page-body-content p {
+      margin-bottom: 12px;
+    }
+
+    .page-body-content blockquote.poem-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      background: rgba(197, 155, 39, 0.12);
+      border-left: 3px solid var(--gold-accent);
+      padding: 10px 16px;
+      margin: 10px 0 12px;
+      border-radius: 0 10px 10px 0;
+      color: #3d271d;
+    }
+
+    .page-body-content .sgk-ref {
+      display: inline-block;
+      font-size: calc(var(--font-size-content) * 0.78);
+      color: #8b1e24;
+      background: #f8e5e5;
+      padding: 1px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-left: 4px;
+    }
+
+    /* HIỆU ỨNG LẬT TRANG 3D */
+    .flip-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      background: linear-gradient(135deg, #fffdf9 0%, #f1e1c6 100%);
+      z-index: 20;
+      pointer-events: none;
+      opacity: 0;
+      backface-visibility: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .flip-overlay.flip-next-anim {
+      right: 0;
+      transform-origin: left center;
+      animation: pageTurnNext 0.55s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+    }
+
+    .flip-overlay.flip-prev-anim {
+      left: 0;
+      transform-origin: right center;
+      animation: pageTurnPrev 0.55s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+    }
+
+    @keyframes pageTurnNext {
+      0% { opacity: 1; transform: rotateY(0deg); }
+      50% { opacity: 1; box-shadow: -20px 0 50px rgba(0,0,0,0.35); }
+      100% { opacity: 0; transform: rotateY(-180deg); }
+    }
+
+    @keyframes pageTurnPrev {
+      0% { opacity: 1; transform: rotateY(0deg); }
+      50% { opacity: 1; box-shadow: 20px 0 50px rgba(0,0,0,0.35); }
+      100% { opacity: 0; transform: rotateY(180deg); }
+    }
+
+    .book-controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .btn-page-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red-primary);
+      color: #fff;
+      border: 2px solid var(--gold-accent);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      box-shadow: 0 6px 16px rgba(139, 30, 36, 0.25);
+    }
+
+    .btn-page-nav:hover:not(:disabled) {
+      background: var(--red-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-page-nav:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .btn-next-section {
+      background: #2b580c;
+      color: #fff;
+      border: 2px solid #a3d977;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+
+    .btn-next-section:hover {
+      background: #397311;
+      transform: translateY(-2px);
+    }
+
+    #pageMeasurer {
+      position: fixed;
+      top: -9999px;
+      left: -9999px;
+      visibility: hidden;
+      pointer-events: none;
+      text-align: justify;
+      line-height: 1.72;
+    }
+
+    @media (max-width: 900px) {
+      .cover-banner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 24px 18px;
+      }
+      .cover-desc {
+        text-align: left;
+      }
+      .book-open {
+        grid-template-columns: 1fr;
+        height: 560px;
+      }
+      .book-spine,
+      .book-page.right-page {
+        display: none;
+      }
+      .flip-overlay {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- THANH ĐIỀU KHIỂN TRÊN CÙNG -->
+  <header class="top-navbar">
+    <div class="brand-group">
+      <button class="btn-home" onclick="goHome()" title="Quay lại màn hình chính của Infographic">
+        <span>🏠</span>
+        <span>Trang chủ Infographic</span>
+      </button>
+      <span class="nav-title">Ngữ Văn 12 • Bài 3 - Văn bản 3: Mấy ý nghĩ về thơ</span>
+    </div>
+
+    <div class="controls-group">
+      <div class="font-control-box" title="Điều chỉnh cỡ chữ và tự động sắp xếp lại bố cục các trang sách">
+        <span class="font-label">Cỡ chữ:</span>
+        <button class="btn-font" onclick="changeFontSize(-2)" aria-label="Giảm cỡ chữ">A-</button>
+        <span class="font-value-badge" id="fontSizeDisplay">18px</span>
+        <button class="btn-font" onclick="changeFontSize(2)" aria-label="Tăng cỡ chữ">A+</button>
+        <button class="btn-font" onclick="resetFontSize()" style="width:auto; padding:0 10px; border-radius:99px; font-size:12px;">Chuẩn</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- KHÔNG GIAN CHÍNH -->
+  <main class="main-stage">
+
+    <!-- MÀN HÌNH 1: TRANG BÌA & SƠ ĐỒ INFOGRAPHIC -->
+    <section id="homeView">
+      <div class="cover-banner">
+        <div class="author-frame">
+          <div class="author-img-wrapper">
+            <img
+              id="authorPortrait"
+              src="https://upload.wikimedia.org/wikipedia/vi/a/ae/Nguyen_Dinh_Thi.jpg"
+              alt="Chân dung tác giả Nguyễn Đình Thi"
+              onerror="this.onerror=null; this.src='Tác giả nguyễn đình thi.jpeg';"
+            />
+          </div>
+          <div class="author-caption">Nguyễn Đình Thi</div>
+          <div class="author-subcaption">(1924 – 2003)</div>
+          <input type="file" id="uploadAuthorInput" accept="image/*" style="display:none" onchange="handleCustomAuthorImage(event)" />
+          <button class="btn-change-photo" onclick="document.getElementById('uploadAuthorInput').click()">
+            📷 Chọn file ảnh từ máy
+          </button>
+        </div>
+
+        <div class="cover-info">
+          <span class="lesson-badge">NỘI DUNG BÀI 3 • VĂN BẢN 3</span>
+          <h1 class="cover-title">MẤY Ý NGHĨ VỀ THƠ</h1>
+          <div class="cover-author-line">Tác giả: Nguyễn Đình Thi (Trích tiểu luận viết năm 1949)</div>
+          <p class="cover-desc">
+            “Thơ là tiếng nói đầu tiên, tiếng nói thứ nhất của tâm hồn khi đụng chạm với cuộc sống... Cốt lõi của một bài thơ hay không nằm ở chiếc áo khoác hình thức, mà ở khả năng lay động những chiều sâu thầm kín nhất trong tâm hồn con người.”
+          </p>
+          <div class="guide-pill">
+            <span>📖</span>
+            <span>Bấm vào bất kỳ <strong>ô tiêu đề màu đỏ</strong> nào bên dưới để mở sách đọc toàn bộ nội dung & lật trang tự động!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading-bar">
+        <h2>SƠ ĐỒ CÁC Ô NỘI DUNG INFOGRAPHIC</h2>
+        <p>Các dòng chữ màu đỏ trong tài liệu Word được thiết kế thành các ô tương tác dưới đây (giữ nguyên vẹn toàn bộ nội dung gốc)</p>
+      </div>
+
+      <div class="infographic-grid" id="infographicGrid"></div>
+    </section>
+
+    <!-- MÀN HÌNH 2: TRÌNH ĐỌC SÁCH LẬT TRANG TƯƠNG TÁC -->
+    <section id="bookView">
+      <div class="book-header-bar">
+        <div class="book-section-select">
+          <button class="btn-home" onclick="goHome()">
+            <span>⬅</span>
+            <span>Quay lại Màn hình chính</span>
+          </button>
+          <select id="sectionSelect" class="section-select-dropdown" onchange="openSection(parseInt(this.value, 10))"></select>
+        </div>
+        <div class="page-indicator" id="pageIndicator">Trang 1–2 / 2</div>
+      </div>
+
+      <div class="book-stage">
+        <div class="book-open" id="bookContainer">
+          <div class="book-spine"></div>
+          <div class="flip-overlay" id="flipOverlay"></div>
+
+          <!-- TRANG TRÁI -->
+          <div class="book-page left-page" id="leftPageBox">
+            <div class="page-running-header">
+              <span id="leftHeaderTitle">MẤY Ý NGHĨ VỀ THƠ</span>
+              <span>Nguyễn Đình Thi</span>
+            </div>
+            <div class="page-body-content" id="leftPageContent"></div>
+            <div class="page-footer-num" id="leftPageNum">Trang 1</div>
+          </div>
+
+          <!-- TRANG PHẢI -->
+          <div class="book-page right-page" id="rightPageBox">
+            <div class="page-running-header">
+              <span id="rightHeaderTitle">NGỮ VĂN 12 • BÀI 3</span>
+              <span>Văn bản nghị luận</span>
+            </div>
+            <div class="page-body-content" id="rightPageContent"></div>
+            <div class="page-footer-num" id="rightPageNum">Trang 2</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-controls-bar">
+        <button class="btn-page-nav" id="btnPrevPage" onclick="turnPage(-1)">
+          <span>◀</span>
+          <span>Lật trang trước</span>
+        </button>
+
+        <button class="btn-page-nav" id="btnNextPage" onclick="turnPage(1)">
+          <span>Chuyển tiếp trang</span>
+          <span>▶</span>
+        </button>
+
+        <button class="btn-next-section" id="btnNextSection" onclick="goToNextSection()" style="display:none;">
+          <span>Mở ô tiếp theo trong Infographic ➔</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- HỘP ĐO KÍCH THƯỚC ẨN PHỤC VỤ TỰ ĐỘNG CHIA TRANG KHI ĐỔI CỠ CHỮ -->
+  <div id="pageMeasurer"></div>
+
+  <script>
+    const INFOGRAPHIC_SECTIONS = [
+      {
+        id: 0,
+        badge: "Ô số 01 • Toàn văn",
+        redTitle: "Nội dung văn bản: Mấy ý nghĩ về thơ – Nguyễn Đình Thi (Trích)",
+        subPills: ["Định nghĩa về thơ", "Tâm hồn & Cảm xúc", "Hình ảnh thơ", "Chữ & Tiếng", "Nhịp điệu & Thơ tự do"],
+        preview: "Từ trước đến nay đã có nhiều định nghĩa về thơ, nhưng lời định nghĩa nào cũng vẫn không đủ. Có người nghĩ rằng thơ là những lời đẹp. Nhưng đâu phải như vậy...",
+        blocks: [
+          `<h3 class="red-heading">Nội dung văn bản: Mấy ý nghĩ về thơ – Nguyễn Đình Thi (Trích)</h3>`,
+          `<p>Từ trước đến nay đã có nhiều định nghĩa về thơ, nhưng lời định nghĩa nào cũng vẫn không đủ. Có người nghĩ rằng thơ là những lời đẹp. Nhưng đâu phải như vậy. Dưới ngọn bút của Hồ Xuân Hương, những chữ tầm thường của lời nói hằng ngày, nôm na mách qué, đã trở thành những lời thơ được truyền tụng mãi. Và Nguyễn Du không những để lại những câu thơ như “Mai cốt cách, tuyết tinh thần”, mà còn viết:</p>`,
+          `<blockquote class="poem-quote">Thoắt trông lờn lợt màu da<br>Ăn chi cao lớn đẫy đà làm sao</blockquote>`,
+          `<p>Cũng không phải thơ là ở những đề tài “đẹp”, phong hoa tuyết nguyệt của các cụ ngày xưa, hoặc những nhớ mong sầu luỵ của các chàng và nàng một thời trước Cách mạng. Nhà thơ Pháp Bô-đơ-le (Baudelaire) đã làm bài thơ nổi tiếng về cái xác chó chết đầy giòi bọ, và ở thời chúng ta, cái xe đạp, khẩu ba-dô-ca, cho đến cái ba lô trên vai chiến sĩ, bóng dây thép gai hung ác của đồn giặc, đều có thể đem nói trong thơ. Nhà thơ ngày nay không đi tìm cái muôn đời viển vông bên ngoài cuộc sống thực của con người.</p>`,
+          `<p>Một nhà phê bình cho rằng thơ khác với các thể văn khác ở chỗ thơ in sâu vào trí nhớ. Một câu, hoặc một bài thơ hay thì có đặc điểm là ghi ngay vào trí nhớ của ta, làm cho ta không quên được nữa. Văn xuôi trái lại, trôi qua trí nhớ của ta. Cái hay của một đoạn văn xuôi còn lại sau khi đã quên hết đoạn văn ấy. Còn đặc tính của bài thơ là in lại, từ gọi từ, câu gọi câu, đọc từ trước phải đến từ sau, đọc câu trước phải đến câu sau, không thể nào khác.</p>`,
+          `<p>Nhưng những nhận xét tài tình trên đây của nhà phê bình vẫn chưa cắt nghĩa được vì sao thơ có hiệu quả làm cho ta nhớ. Và cũng có những cái ta rất nhớ, ví dụ những công thức toán học, nhưng lại không phải là thơ.</p>`,
+          `<p>Đầu mối của thơ có lẽ ta đi tìm bên trong tâm hồn con người chăng? Ta nói trời xanh hôm nay nên thơ nhưng chính ra là lòng chúng ta mang một nỗi niềm vui buồn nào mà muốn làm thơ hoặc đọc thơ về trời xanh. Mưa phùn buổi chiều gợi những câu thơ nào nhớ nhung, nhưng chính nỗi nhớ nhung gặp buổi chiều mưa mà muốn thì thầm những câu thơ chưa thành hình rõ.</p>`,
+          `<p>[...] Làm thơ, ấy là dùng lời và những dấu hiệu thay cho lời nói, tức là chữ – để thể hiện một trạng thái tâm lí đang rung chuyển khác thường. Làm thơ là đang sống, không phải chỉ nhìn lại sự sống, làm một câu thơ yêu, tâm hồn cũng rung động như khi có người yêu trước mặt. Bài thơ là những câu, những lời diễn lên, làm sống ngay lên một tình cảm, một nỗi niềm trong lòng người đọc. Bài thơ là sợi dây truyền tình cảm cho người đọc. Ta nói truyền sang hình như người đọc chỉ đứng yên mà nhận. Nhưng kì thực, cái trạng thái tâm lí truyền sang ấy là người đọc tự tạo cho mình, khi nhìn những chữ, khi nghe những lời, khi mọi sợi dây của tâm hồn rung lên vì chạm thấy những hình ảnh, những ý nghĩ, những mong muốn, những tình cảm mà lời và chữ của bài thơ kéo theo đằng sau như vùng sáng xung quanh ngọn lửa.</p>`,
+          `<p>Nói đến hình ảnh trong thơ. Thơ là tiếng nói đầu tiên, tiếng nói thứ nhất của tâm hồn khi đụng chạm với cuộc sống. Toé lên ở những nơi giao nhau của tâm hồn với ngoại vật, trước hết là những cảm xúc. Cảm xúc là phần thịt xương hơn cả của đời sống tâm hồn. Thơ phải có tư tưởng, có ý thức, vì bất cứ cảm xúc, tình tự nào của con người cũng dính liền với sự suy nghĩ. Nhưng tư tưởng trong thơ là tư tưởng dính liền với cuộc sống, ở trong cuộc sống. Tư tưởng của thơ nằm ngay trong cảm xúc, tình tự. Không ai đọc thơ riêng bằng tri thức mà yêu thơ. Hiểu thơ kì thực là vấn đề của cả tâm hồn.</p>`,
+          `<p>Nên thơ không nói bằng ý niệm thuần tuý. Nói bằng ý niệm chúng ta sẽ có triết học, luận lí [...] chứ không có thơ. Thơ tìm nói với một sự suy nghĩ toàn diện hơn là suy nghĩ riêng theo luận lí. Thơ muốn lay động những chiều sâu của tâm hồn, đem cảm xúc mà đi thẳng vào sự suy nghĩ.</p>`,
+          `<blockquote class="poem-quote">Trên trời có đám mây xanh<br>Ở giữa mây trắng, xung quanh mây vàng<br>Ước gì anh lấy được nàng...</blockquote>`,
+          `<p>Nhà luận lí ngồi khảo cứu mãi xem vì sao mà chuyện mây trắng mây vàng lại đưa đến chuyện anh với nàng. Luận lí chưa hiểu, nhưng cả tâm hồn chúng ta đã hiểu và âm vang theo.</p>`,
+          `<p>[...] Người làm thơ bắt chợt trong lòng mình một ý nghĩ hay tình cảm, dù thành thực và sâu sắc, cũng không vội dừng lại, đem những tiếng có vần điệu chăng lưới bắt lấy ý nghĩ hay tình cảm ấy. Anh ta còn phải thấy được những hình ảnh trong ý nghĩ hay tình cảm của mình, thì tiếng nói của anh mới truyền cảm sâu sắc được cho người khác.</p>`,
+          `<p>“Tìm hình ảnh”, nói như vậy tưởng chừng việc làm thơ là đào vào trong tâm hồn mình, cố gắng nặn nót. Cũng có trường hợp như vậy, nhưng thực ra đáng lẽ là nhà thơ đi giữa cuộc đời, mở rộng cả tâm hồn mình thì mỗi con mắt nhìn gặp trên đường, mỗi cảnh ngộ, mỗi con người cho đến mỗi tiếng nghe thấy, mỗi giọt nắng mỗi chiếc lá tự nhiên mà vào trong lòng, để rồi động sâu đến tư tưởng và tình cảm. Trong việc làm thơ bấy giờ, hình ảnh tự nhiên hiện lên trước nhất.</p>`,
+          `<p>Những hình ảnh còn tươi nguyên, mà nhà thơ tìm thấy, bao giờ cũng mới mẻ, đột ngột lạ lùng. Vì nhà thơ nhìn bằng con mắt của người đầu tiên. Đó là những hình ảnh mới tinh, chưa có vết nhoà của thói quen, không bị rập khuôn vào những ý niệm trừu tượng định trước. Mượn câu nói của một nhà văn Pháp, nhà thơ bao giờ cũng là ngôi thứ nhất. Nhưng những hình ảnh mới lạ ấy đều ở trong đời thực, chúng ta đều thấy. Hình ảnh của thơ vừa làm ta ngạc nhiên, vừa đã quen với chúng ta tự bao giờ. Câu thơ đột ngột làm cho ta nhận thấy những cái gần gũi nhất với chúng ta. Trước kia, ta vẫn gặp mà không biết nhìn.</p>`,
+          `<p>[…] Chữ và tiếng trong thơ phải còn có một giá trị khác, ngoài giá trị ý niệm. Người làm thơ chọn chữ và tiếng không những vì ý nghĩa của nó, cái nghĩa thế nào là thế ấy, đóng lại trong một khung sắt. Điều kì diệu của thơ là mỗi tiếng, mỗi chữ, ngoài cái nghĩa của nó, ngoài công dụng gọi tên sự vật, bỗng tự phá tung mở rộng ra, gọi đến xung quanh nó những cảm xúc, những hình ảnh không ngờ, toả ra xung quanh nó một vùng ánh sáng động đậy. Sức mạnh nhất của câu thơ là ở sức gợi ấy. Câu thơ hay, có cái gì làm rung những chiếc cốc kia trên bàn, làm động ánh trăng kia trên bờ đê. “Chim hôm thoi thót về rừng”... Chúng ta đọc mà thấy rõ buổi chiều như hơi thở tắt dần, câu thơ không còn là một ý, một bức ảnh gắng gượng chụp lại cảnh chiều, nó đã bao phủ một vầng linh động truyền sang lòng ta cái nhịp phập phồng của buổi chiều. Mỗi chữ như một ngọn nến đang cháy, những ngọn nến ấy xếp bên nhau thành một vùng sáng chung. Ánh sáng không những ở đầu ngọn nến, nó ở tất cả xung quanh những ngọn nến. Ý thơ không những trong những chữ, nó vây bọc xung quanh. Người xưa nói: Thi tại ngôn ngoại.</p>`,
+          `<p>Cái kì diệu ấy của tiếng nói trong thơ, có lẽ chăng ta tìm nó trong nhịp điệu, trong nhạc của thơ. Nhịp điệu của thơ không những là nhịp điệu bằng bằng, trắc trắc, lên bổng xuống trầm như tiếng đàn êm tai, một người ngoại quốc không biết tiếng ta cũng có thể nghe thấy được. Nhạc của thơ không giới hạn ở thứ nhạc ngoài tai ấy. Thơ có một thứ nhạc nữa, một thứ nhịp điệu bên trong, một thứ nhịp điệu của hình ảnh, tình ý, nói chung là của tâm hồn. Ngâm thơ véo von mới làm cho ta nghe thấy tiếng bổng trầm của bằng trắc, chép thơ, đọc thơ bằng mắt, hoặc đọc lên như khi ta nói, có lẽ dễ cho chúng ta nghe thấy hơn tiếng nhịp điệu thực của thơ. Đó là nhịp điệu hình thành của những cảm xúc, hình ảnh, liên tiếp hoà hợp, mà những tiếng và chữ gọi ra như những ngân vang dài, ngay những khoảng lung linh giữa chữ, những khoảng im lặng cũng là nơi trú ngụ kín đáo của sự xúc động.</p>`,
+          `<p>Đường đi của thơ là con đường đưa thẳng vào tình cảm, không quanh co, qua những chặng, những trung gian, những cột cây số. Văn xuôi lôi cuốn người như dòng nước, đưa ta đi lần lượt, từ điểm này qua điểm khác. Thơ, trái lại, chỉ chọn một ít điểm chính, bấm vào những điểm ấy thì toàn thể động lên theo.</p>`,
+          `<p>Thơ là tổng hợp, kết tinh. Văn xuôi được phép không mười phần hoàn hảo, nhưng thơ thì luôn luôn đòi hỏi sự toàn bích.</p>`,
+          `<p>Cuối cùng, tôi muốn nói tới vấn đề thơ tự do, thơ không vần. Theo tôi, những luật lệ của thơ, từ âm điệu, đến vần, đều là những vũ khí rất mạnh trong tay người làm thơ. Nhưng không phải hễ thiếu những vũ khí ấy là trận đánh nhất định thua. Thiếu vũ khí ấy, trận đánh gay go thêm nhiều, nhưng người làm thơ vẫn có thể thắng.</p>`,
+          `<p>Câu chuyện vần hay không vần ở thơ ta gần đây cũng được đem ra bàn cãi. Có bạn cho rằng thơ Việt Nam, khác với thơ các nước, không thể thiếu vần. Tiếng Việt Nam có đứng riêng hẳn như thế không? Thơ Việt Nam có thể bỏ vần mà vẫn Việt Nam hay không? Thiết tưởng cách đáp hay hơn là để cho tìm tòi, thử thách. Không có lí luận nào bằng sự thử thách của thực tại.</p>`,
+          `<p>Riêng tôi nghĩ rằng, không có vấn đề thơ tự do, thơ có vần và thơ không có vần. Chỉ có thơ thực và thơ giả, thơ hay và thơ không hay, thơ và không thơ. Mỗi thể thơ có một khả năng, một thứ nhịp điệu riêng của nó, nhưng nếu theo dõi những thời lớn của thơ đi cùng nhịp với những thời kì lớn của lịch sử, thì một thời đại mới của nghệ thuật thường bao giờ cũng tạo ra một hình thức mới. Thơ của một thời mới, trong những bước đầu, ít khi chịu những hình thức đều đặn, cố định. Nó chạy tung về những chân trời mở rộng để tìm kiếm, thử sức mới của nó. Rồi thời đại dừng lại, thơ nảy nở trong những hình thức trong sáng đã tìm thấy.</p>`,
+          `<p>Những hình thức ấy gồm có những phát minh mới, cùng với những hình thức cũ, nhưng bao giờ cũng đã tái tạo và nâng cao đến một độ khác hẳn xưa.</p>`,
+          `<p>[…] Tôi cho rằng chúng ta không nên lo thơ đi vào hình thức này hay hình thức khác. Mà trước hết nên lo sao thơ phải nói lên được những tình cảm, tư tưởng mới của thời đại. Dùng bất cứ hình thức nào, miễn là thơ diễn tả được đúng tâm hồn con người mới ngày nay.</p>`,
+          `<p>Vượt khỏi tất cả mọi luật lệ, không phải thơ trở nên buông thả, bừa bãi. Sự cẩu thả, buông lỏng chưa bao giờ đi đôi được với nghệ thuật. Nhưng câu chuyện luật lệ trong thơ cũng như câu chuyện kỉ luật trong cách mạng. Kỉ luật của những tổ chức cách mạng chưa bao giờ dựa trên sự trừng phạt đe doạ mà tồn tại được, kỉ luật ấy phải tự giác mới bền vững. Nghệ thuật có kỉ luật sắt của nó, nhưng đó không thể là những trói buộc, lề lối định sẵn bên ngoài. Nó phải là sự tự kiểm soát, tự chủ từ bên trong sự sáng tác mà ra. Bỏ những luật lệ máy móc bên ngoài, những luật lệ bản thân của nghệ thuật, những luật lệ từ bên trong mà ra, chỉ càng quan trọng hơn. Đạp đổ bức tường giam trước mặt rồi, giới hạn chỉ còn do sức đi xa của mình.</p>`
+        ]
+      },
+      {
+        id: 1,
+        badge: "Ô số 02 • Trọng tâm",
+        redTitle: "Luận đề chính (Vấn đề nghị luận chính)",
+        subPills: ["Tên nội dung mang luận đề", "Định nghĩa về thơ", "Đặc trưng của thơ", "Mối quan hệ giữa thơ và cuộc sống"],
+        preview: "Bản chất của thơ ca và đặc trưng của tư duy thơ (bao gồm mối quan hệ giữa thơ với đời sống, ngôn ngữ thơ, hình ảnh thơ và cái thực trong thơ)...",
+        blocks: [
+          `<h3 class="red-heading">Luận đề chính (Vấn đề nghị luận chính)</h3>`,
+          `<p><strong>Luận đề chính (Vấn đề nghị luận chính):</strong> Bản chất của thơ ca và đặc trưng của tư duy thơ (bao gồm mối quan hệ giữa thơ với đời sống, ngôn ngữ thơ, hình ảnh thơ và cái thực trong thơ).</p>`,
+          `<h4 class="red-subheading">Tên nội dung mang luận đề</h4>`,
+          `<p>Tên của chính văn bản hoặc phần trích đoạn trong sách giáo khoa dùng để thảo luận về lý luận văn học này (thường nằm trong bài học về đặc điểm của ngôn ngữ và tư duy thơ ca).</p>`,
+          `<p>Trong tác phẩm "Mấy ý nghĩ về thơ" của Nguyễn Đình Thi, luận đề (vấn đề nghị luận chính) được xác định rõ ràng dựa trên cả nhan đề và toàn bộ nội dung văn bản như sau: Bản chất đặc trưng của thơ ca và mối quan hệ khăng khít giữa thơ với cuộc sống con người.</p>`,
+          `<h4 class="red-subheading">Định nghĩa về thơ</h4>`,
+          `<p>Thơ không chỉ là hình thức câu chữ, vần điệu mà là sự thể hiện tâm hồn, là "tiếng nói đầu tiên, tiếng nói thứ nhất của tâm hồn khi đụng chạm với cuộc sống".</p>`,
+          `<h4 class="red-subheading">Đặc trưng của thơ</h4>`,
+          `<p>Thơ là sự kết hợp hài hòa giữa tình cảm mãnh liệt (xúc cảm) và suy nghĩ sâu sắc (tâm tư). Hình ảnh và nhạc điệu trong thơ phải sinh ra từ bên trong tâm hồn người nghệ sĩ chứ không phải là sự sắp xếp kỹ thuật khuôn mẫu.</p>`,
+          `<h4 class="red-subheading">Mối quan hệ giữa thơ và cuộc sống</h4>`,
+          `<p>Thơ bắt nguồn từ thực tại đời sống, đi sâu vào thế giới nội tâm của con người và quay trở lại phục vụ, làm phong phú thêm cho cuộc sống con người.</p>`,
+          `<p>Nhan đề mang tính chất khiêm nhường ("Mấy ý nghĩ...") nhưng nội dung văn bản lại khẳng định một quan điểm nghệ thuật sâu sắc: Thơ là tiếng lòng của con người trước cuộc đời, là sự rung động tự do, chân thực và không thể bị trói buộc bởi những luật lệ hình thức cứng nhắc.</p>`
+        ]
+      },
+      {
+        id: 2,
+        badge: "Ô số 03 • Hệ thống lý lẽ",
+        redTitle: "Các luận điểm; lý lẽ chính trong văn bản",
+        subPills: ["Lí lẽ luận điểm 1", "Lí lẽ luận điểm 2", "Lí lẽ luận điểm 3", "Lí lẽ luận điểm 4", "Lí lẽ luận điểm 5"],
+        preview: "Tổng hợp đầy đủ 5 hệ thống lý lẽ bám sát văn bản từ trang 72 đến trang 76 sách giáo khoa Ngữ Văn lớp 12 tập 1...",
+        blocks: [
+          `<h3 class="red-heading">Các luận điểm; lý lẽ chính trong văn bản</h3>`,
+          `<h4 class="red-subheading">Lí lẽ của luận điểm 1 (Bác bỏ các quan niệm phiến diện về thơ)</h4>`,
+          `<p>• Từ trước đến nay đã có nhiều định nghĩa về thơ, nhưng lời định nghĩa nào cũng vẫn không đủ. Có người nghĩ rằng thơ là những lời đẹp. Nhưng đâu phải như vậy. Dưới ngọn bút của Hồ Xuân Hương, những chữ tầm thường của lời nói hằng ngày, nôm na mách qué, đã trở thành những lời thơ được truyền tụng. <span class="sgk-ref">trang 72 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Cũng không phải thơ là ở những đề tài "đẹp", phong hoa tuyết nguyệt của các cụ ngày xưa, hoặc những nhớ mong sầu luỵ của các chàng và nàng một thời trước Cách mạng. Nhà thơ Pháp Bô-đơ-le (Baudelaire) đã làm bài thơ nổi tiếng về cái xác chó chết đầy giòi bọ, và ở thời chúng ta, cái xe đạp, khẩu ba-dô-ca, cho đến cái ba lô trên vai chiến sĩ, bóng dây thép gai hung ác của đồn giặc, đều có thể đem nói trong thơ. Nhà thơ ngày nay không đi tìm cái muôn đời viển vông bên ngoài cuộc sống thực của con người. <span class="sgk-ref">trang 72 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<h4 class="red-subheading">Lí lẽ luận điểm 2 (Đầu mối của thơ là tâm hồn con người)</h4>`,
+          `<p>• Đầu mối của thơ có lẽ ta đi tìm bên trong tâm hồn con người chăng? Ta nói trời xanh hôm nay nên thơ nhưng chính ra là lòng chúng ta mang một nỗi niềm vui buồn nào mà muốn làm thơ hoặc đọc thơ về trời xanh. Mưa phùn buổi chiều gợi những câu thơ nào nhớ nhung, nhưng chính nỗi nhớ nhung gặp buổi chiều mưa mà muốn thì thầm những câu thơ chưa thành hình rõ. <span class="sgk-ref">trang 73 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Làm thơ, ấy là dùng lời và những dấu hiệu thay cho lời nói, tức là chữ - để thể hiện một trạng thái tâm lí đang rung chuyển khác thường. Làm thơ là đang sống, không phải chỉ nhìn lại sự sống. <span class="sgk-ref">trang 73 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Bài thơ là những câu, những lời diễn lên, làm sống ngay lên một tình cảm, một nỗi niềm trong lòng người đọc. Bài thơ là sợi dây truyền tình cảm cho người đọc. <span class="sgk-ref">trang 73 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Khi nhìn những chữ, khi nghe những lời, khi mọi sợi dây của tâm hồn rung lên vì chạm thấy những hình ảnh, những ý nghĩ, những mong muốn, những tình cảm mà lời và chữ của bài thơ kéo theo. <span class="sgk-ref">trang 73 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<h4 class="red-subheading">Lí lẽ của luận điểm 3 (Cảm xúc, tư tưởng và hình ảnh trong thơ)</h4>`,
+          `<p>• Thơ là tiếng nói đầu tiên, tiếng nói thứ nhất của tâm hồn khi đụng chạm với cuộc sống. Cảm xúc là phần thịt xương hơn cả của đời sống tâm hồn. <span class="sgk-ref">trang 73 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Thơ phải có tư tưởng, có ý thức, vì bất cứ cảm xúc, tình tự nào của con người cũng dính liền với sự suy nghĩ. <span class="sgk-ref">trang 73 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Tư tưởng trong thơ là tư tưởng dính liền với cuộc sống, ở trong cuộc sống. Tư tưởng của thơ nằm ngay trong cảm xúc, tình tự. Không ai đọc thơ riêng bằng tri thức mà yêu thơ. Hiểu thơ kì thực là vấn đề của cả tâm hồn. <span class="sgk-ref">trang 73 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Thơ không nói bằng ý niệm thuần tuý. Nói bằng ý niệm chúng ta sẽ có triết học, luận lí [...] chứ không có thơ. <span class="sgk-ref">trang 73 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Thơ muốn lay động những chiều sâu của tâm hồn, đem cảm xúc mà đi thẳng vào sự suy nghĩ. <span class="sgk-ref">trang 73 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<h4 class="red-subheading">Lí lẽ luận điểm 4 (Chữ, tiếng, sức gợi và nhịp điệu của thơ)</h4>`,
+          `<p>• Chữ và tiếng trong thơ phải còn có một giá trị khác, ngoài giá trị ý niệm. Người làm thơ chọn chữ và tiếng không những vì ý nghĩa của nó, cái nghĩa thế nào là thế ấy, đóng lại trong một khung sắt. Điều kì diệu của thơ là mỗi tiếng, mỗi chữ, ngoài cái nghĩa của nó, ngoài công dụng gọi tên sự vật, bỗng tự phá tung mở rộng ra, gọi đến xung quanh nó những cảm xúc, những hình ảnh không ngờ. <span class="sgk-ref">trang 74 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Sức mạnh nhất của câu thơ là ở sức gợi ấy. <span class="sgk-ref">trang 74 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Nhịp điệu của thơ không những là nhịp điệu bằng bằng, trắc trắc... mà còn là một thứ nhịp điệu bên trong, một thứ nhịp điệu của hình ảnh, tình ý, nói chung là của tâm hồn. <span class="sgk-ref">trang 75 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Những tiếng và chữ gọi ra như những ngân vang dài, ngay những khoảng lung linh giữa chữ, những khoảng im lặng cũng là nơi trú ngụ kín đáo của sự xúc động. <span class="sgk-ref">trang 75 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Đường đi của thơ là con đường đưa thẳng vào tình cảm, không quanh co, qua những chặng, những trung gian, những cột cây số. <span class="sgk-ref">trang 75 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Thơ là tổng hợp, kết tinh. Văn xuôi được phép không mười phần hoàn hảo, nhưng thơ thì luôn luôn đòi hỏi sự toàn bích. <span class="sgk-ref">trang 75 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<h4 class="red-subheading">Lí lẽ luận điểm 5 (Vấn đề thơ tự do, thơ không vần và kỉ luật nghệ thuật)</h4>`,
+          `<p>• Âm điệu, đến vần, đều là những võ khí rất mạnh trong tay người làm thơ. Thiếu võ khí ấy, trận đánh gay go thêm nhiều, nhưng người làm thơ vẫn có thể thắng. <span class="sgk-ref">trang 75 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Không có vấn đề thơ tự do, thơ có vần và thơ không có vần. Chỉ có thơ thực và thơ giả, thơ hay và thơ không hay. Mỗi thể thơ có một khả năng, một thứ nhịp điệu riêng của nó. <span class="sgk-ref">trang 76 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Nếu theo dõi những thời lớn của thơ đi cùng nhịp với những thời kì lớn của lịch sử, thì một thời đại mới của nghệ thuật thường bao giờ cũng tạo ra một hình thức mới. Thơ của một thời mới, trong những bước đầu, ít khi chịu những hình thức đều đặn, cố định. <span class="sgk-ref">trang 76 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Những hình thức ấy gồm có những phát minh mới, cùng với những hình thức cũ, nhưng bao giờ cũng đã tái tạo và nâng cao đến một độ khác hẳn xưa. <span class="sgk-ref">trang 76 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Trước hết nên lo sao thơ phải nói lên được những tình cảm, tư tưởng mới của thời đại. Dùng bất cứ hình thức nào, miễn là thơ diễn tả được đúng tâm hồn con người mới ngày nay. Vượt khỏi tất cả mọi luật lệ, không phải thơ trở nên buông thả, bừa bãi. Sự cẩu thả, buông lỏng chưa bao giờ đi đôi được với nghệ thuật. <span class="sgk-ref">trang 76 SGK Ngữ Văn 12 tập 1</span></p>`,
+          `<p>• Kỉ luật phải là sự tự kiểm soát, tự chủ từ bên trong sự sáng tác mà ra. Bỏ những luật lệ máy móc bên ngoài, những luật lệ bản thân của nghệ thuật, những luật lệ từ bên trong mà ra, chỉ càng quan trọng hơn. <span class="sgk-ref">trang 76 SGK Ngữ Văn 12 tập 1</span></p>`
+        ]
+      },
+      {
+        id: 3,
+        badge: "Ô số 04 • Nghệ thuật lập luận",
+        redTitle: "THAO TÁC NGHỊ LUẬN",
+        subPills: ["Giải thích", "Phân tích", "Chứng minh", "So sánh", "Bác bỏ", "Bình luận"],
+        preview: "Sự phối hợp chặt chẽ 6 thao tác nghị luận: Giải thích, Phân tích, Chứng minh, So sánh, Bác bỏ và Bình luận...",
+        blocks: [
+          `<h3 class="red-heading">THAO TÁC NGHỊ LUẬN</h3>`,
+          `<h4 class="red-subheading">1. Giải thích</h4>`,
+          `<p>Nguyễn Đình Thi đã ngay lập tức định nghĩa lại bản chất của thơ một cách rất giản dị nhưng sâu sắc. Theo tác giả, thơ không phải là cái gì đó quá xa vời, mà chính là tiếng nói đầu tiên, tiếng nói thứ nhất của con người khi đụng chạm với cuộc sống. Từ định nghĩa nền tảng này, tác giả giải thích thêm rằng "hình ảnh thơ" không phải là những chữ nghĩa hoa mỹ được sắp đặt cố ý, mà phải là "hình ảnh thực nảy lên trong tâm hồn" khi ta xúc động trước một thứ gì đó. Đồng thời, ông cũng nói thêm "nhịp điệu" của thơ không đơn thuần là vần điệu bằng trắc bên ngoài, mà quan trọng hơn cả là nhịp điệu bên trong - tức là sự chuyển động, quấn quýt của cảm xúc và tư tưởng xuất phát từ tâm hồn, không phải từ lí trí.</p>`,
+          `<h4 class="red-subheading">2. Phân tích</h4>`,
+          `<p>Tác giả chuyển sang thao tác phân tích để mổ xẻ các yếu tố cấu thành một bài thơ hay. Nguyễn Đình Thi đã chia nhỏ đối tượng thành bốn phương diện rất rõ ràng. Thứ nhất là cảm xúc, ông khẳng định đây là phần xương thịt, là gốc rễ của thơ ca, mọi bài thơ phải đi ra từ những rung động chân thực của đời sống như vui, buồn, đau khổ hay say mê với cuộc đời. Phương diện thứ hai là tư tưởng, nhưng tư tưởng trong thơ không khô khan mà phải thấm đẫm trong cảm xúc. Phương diện thứ ba là hình ảnh, đóng vai trò làm cầu nối trực quan để hiện thực hóa thế giới nội tâm. Và cuối cùng là ngôn ngữ, gồm chữ và tiếng, có sức gợi mở lớn để đi thẳng vào tâm hồn người đọc nhờ nhạc điệu riêng.</p>`,
+          `<h4 class="red-subheading">3. Chứng minh</h4>`,
+          `<p>Để các lý lẽ trên không dừng lại ở mức lý thuyết suông, tác giả đã sử dụng thao tác chứng minh bằng những dẫn chứng rất thuyết phục từ thực tế. Nguyễn Đình Thi chứng minh sức mạnh lay động của thơ bằng cách chỉ ra trải nghiệm của chính người đọc: khi ta gặp một bài thơ hay, ta không cảm thấy mình đang đọc chữ, mà thấy như có một người bạn đang trò chuyện, khiến tâm hồn ta thay đổi và nhìn cuộc đời bằng con mắt khác. Đặc biệt, trong bối cảnh cuộc kháng chiến chống Pháp năm 1949, ông chứng minh rằng những câu ca dao hay những bài thơ chiến khu tuy không hề gò bó theo niêm luật cũ nhưng vẫn có sức sống mãnh liệt vì chúng mang nhịp điệu của cả một thời đại anh hùng.</p>`,
+          `<h4 class="red-subheading">4. So sánh</h4>`,
+          `<p>Để làm nổi bật hơn nữa nét đặc trưng của thơ, tác giả tiếp tục vận dụng thao tác so sánh. Ở đây, Nguyễn Đình Thi đã đặt thơ cạnh triết học để thấy sự khác biệt: nếu triết học diễn đạt thế giới bằng những hệ thống lý luận và ý niệm khô khan, bắt người ta phải hiểu bằng trí óc, thì thơ lại diễn đạt tư tưởng bằng tình cảm và hình ảnh, khiến người ta phải cảm nhận bằng cả tâm hồn. Chưa dừng lại ở đó, ông còn so sánh giữa "thơ thực" và "thơ giả". Thơ thực là thơ bắt nguồn từ những băn khoăn, đau lo thực tế của đời sống; còn thơ giả chỉ là sự chắp vá, lắp ghép câu chữ một cách khéo léo nhưng bên trong lại hoàn toàn trống rỗng và vô cảm.</p>`,
+          `<h4 class="red-subheading">5. Bác bỏ</h4>`,
+          `<p>Một trong những đoạn gay gắt và mạnh mẽ nhất của bài tiểu luận chính là thao tác bác bỏ. Nguyễn Đình Thi đã thẳng thắn phản biện lại những quan niệm cũ kỹ, lạc hậu đang kìm hãm sự phát triển của thơ ca. Ông quyết liệt bác bỏ tư duy cho rằng làm thơ là phải bó buộc, giam hãm cảm xúc trong các quy tắc luật thơ nghiêm ngặt như luật đường luật hay vần điệu cứng nhắc. Đồng thời, ông cũng bác bỏ lối làm thơ "thi vị hóa" giả tạo, tức là kiểu làm thơ thoát ly thực tế, chỉ biết ca hoa tụng nguyệt trong khi đất nước đang chiến đấu. Ông nhấn mạnh rằng thơ không được phép xa rời cuộc sống thực của nhân dân.</p>`,
+          `<h4 class="red-subheading">6. Bình luận</h4>`,
+          `<p>Cuối cùng, khép lại mạch lập luận là thao tác bình luận để khẳng định giá trị trường tồn của tác phẩm. Nguyễn Đình Thi đưa ra đánh giá rằng, những quan điểm đổi mới này không chỉ có giá trị tại thời điểm năm 1949, mà nó mang tính chất mở đường, giải phóng cho phong trào thơ tự do phát triển mạnh mẽ về sau. Bài tiểu luận "Mấy ý nghĩ về thơ" thực sự là một chiếc kim chỉ nam quý giá, giúp cho những người sáng tác biết cách viết chân thực hơn, và giúp cho những người tiếp nhận chúng ta biết cách mở lòng để cảm nhận trọn vẹn một bài thơ hay.</p>`
+        ]
+      },
+      {
+        id: 4,
+        badge: "Ô số 05 • Quan điểm",
+        redTitle: "Quan điểm, thái độ của tác giả về thơ",
+        subPills: ["Về chất liệu và đề tài", "Về bản chất của thơ", "Về ngôn từ và hình ảnh", "Về nhịp điệu", "Về hình thức"],
+        preview: "Thơ không bó hẹp trong những 'lời đẹp' hay đề tài 'phong hoa tuyết nguyệt', mà bao trùm lên toàn bộ cuộc sống thực tại...",
+        blocks: [
+          `<h3 class="red-heading">Quan điểm, thái độ của tác giả về thơ</h3>`,
+          `<h4 class="red-subheading">• Về chất liệu và đề tài</h4>`,
+          `<p>Thơ không bó hẹp trong những "lời đẹp" hay đề tài "phong hoa tuyết nguyệt", mà bao trùm lên toàn bộ cuộc sống thực tại, kể cả những thứ gai góc, thô mộc nhất.</p>`,
+          `<blockquote class="poem-quote">◦ Câu văn trong văn bản: "Nhà thơ ngày nay không đi tìm cái muôn đời viển vông bên ngoài cuộc sống thực của con người."</blockquote>`,
+          `<h4 class="red-subheading">• Về bản chất của thơ</h4>`,
+          `<p>Thơ là tiếng nói của tình cảm, xuất phát từ những rung động sâu xa của tâm hồn con người trước cuộc đời.</p>`,
+          `<blockquote class="poem-quote">◦ Câu văn trong văn bản: "Làm thơ, ấy là dùng lời và những dấu hiệu thay cho lời nói, tức là chữ - để thể hiện một trạng thái tâm lí đang rung chuyển khác thường."</blockquote>`,
+          `<h4 class="red-subheading">• Về ngôn từ và hình ảnh</h4>`,
+          `<p>Chữ trong thơ mang sức mạnh gợi hình và gợi cảm vượt ra khỏi giới hạn từ vựng thông thường, tạo ra những vùng liên tưởng rộng lớn.</p>`,
+          `<blockquote class="poem-quote">◦ Câu văn trong văn bản: "Điều kì diệu của thơ là mỗi tiếng, mỗi chữ, ngoài cái nghĩa của nó, ngoài công dụng gọi tên sự vật, bỗng tự phá tung mở rộng ra, gọi đến xung quanh nó những cảm xúc, những hình ảnh không ngờ..."</blockquote>`,
+          `<h4 class="red-subheading">• Về nhịp điệu</h4>`,
+          `<p>Nhịp điệu cốt lõi của thơ không nằm ở vần điệu bằng trắc bên ngoài, mà nằm ở nhịp điệu bên trong của cảm xúc.</p>`,
+          `<blockquote class="poem-quote">◦ Câu văn trong văn bản: "Thơ có một thứ nhạc nữa, một thứ nhịp điệu bên trong, một thứ nhịp điệu của hình ảnh, tình ý, nói chung là của tâm hồn."</blockquote>`,
+          `<h4 class="red-subheading">• Về hình thức (thơ tự do và thơ có vần)</h4>`,
+          `<p>Tác giả xóa bỏ ranh giới cứng nhắc về luật lệ hình thức, cho rằng giá trị thực sự nằm ở chất lượng của thơ.</p>`,
+          `<blockquote class="poem-quote">◦ Câu văn trong văn bản: "Chỉ có thơ thực và thơ giả, thơ hay và thơ không hay, thơ và không thơ."</blockquote>`
+        ]
+      },
+      {
+        id: 5,
+        badge: "Ô số 06 • Tư thế nghệ sĩ",
+        redTitle: "Thái độ của tác giả",
+        subPills: ["Cởi mở, tiến bộ", "Nghiêm túc và khắt khe với nghệ thuật", "Kỉ luật nội tâm"],
+        preview: "Tác giả dứt khoát phủ nhận những lối mòn, rập khuôn sáo rỗng trong thơ ca truyền thống để ủng hộ sự đổi mới, sáng tạo tự do...",
+        blocks: [
+          `<h3 class="red-heading">Thái độ của tác giả</h3>`,
+          `<h4 class="red-subheading">• Cởi mở, tiến bộ</h4>`,
+          `<p>Tác giả dứt khoát phủ nhận những lối mòn, rập khuôn sáo rỗng trong thơ ca truyền thống để ủng hộ sự đổi mới, sáng tạo tự do phù hợp với thời đại.</p>`,
+          `<h4 class="red-subheading">• Nghiêm túc và khắt khe với nghệ thuật</h4>`,
+          `<p>Dù bảo vệ thơ tự do, tác giả kịch liệt phản đối sự dễ dãi, buông thả. Ông đòi hỏi người nghệ sĩ phải có bản lĩnh và kỉ luật nội tâm sâu sắc.</p>`,
+          `<blockquote class="poem-quote">◦ Câu văn trong văn bản: "Vượt khỏi tất cả mọi luật lệ, không phải thơ trở nên buông thả, bừa bãi... Bỏ những luật lệ máy móc bên ngoài, những luật lệ bản thân của nghệ thuật, những luật lệ từ bên trong mà ra, chỉ càng quan trọng hơn."</blockquote>`
+        ]
+      },
+      {
+        id: 6,
+        badge: "Ô số 07 • Kết tinh",
+        redTitle: "Thông điệp tác giả gửi gắm trong văn bản",
+        subPills: ["Bám rễ hiện thực đời sống", "Mở rộng tâm hồn", "Kỉ luật tự giác của trái tim"],
+        preview: "Nghệ thuật thơ ca phải luôn bám rễ sâu chặt vào hiện thực đời sống để 'diễn tả được đúng tâm hồn con người mới ngày nay'...",
+        blocks: [
+          `<h3 class="red-heading">Thông điệp tác giả gửi gắm trong văn bản</h3>`,
+          `<p>Thông qua bài tiểu luận, tác giả muốn khẳng định rằng: Nghệ thuật thơ ca phải luôn bám rễ sâu chặt vào hiện thực đời sống để "diễn tả được đúng tâm hồn con người mới ngày nay".</p>`,
+          `<p>Người làm thơ cần phải mở rộng tâm hồn để đón nhận những rung động từ cuộc sống, từ đó sáng tạo ra những vần thơ xuất phát từ kỉ luật tự giác của trái tim.</p>`,
+          `<p>Cốt lõi của một bài thơ hay không nằm ở chiếc áo khoác hình thức, mà ở khả năng lay động những chiều sâu thầm kín nhất trong tâm hồn con người.</p>`
+        ]
+      }
+    ];
+
+    let currentFontSize = 18;
+    let currentSectionIndex = 0;
+    let paginatedPages = [];
+    let currentSpreadIndex = 0;
+
+    function isSinglePageMode() {
+      return window.innerWidth <= 900;
+    }
+
+    function initInfographic() {
+      const grid = document.getElementById('infographicGrid');
+      const select = document.getElementById('sectionSelect');
+
+      grid.innerHTML = INFOGRAPHIC_SECTIONS.map((sec, idx) => `
+        <article class="red-node-card" onclick="openSection(${idx})">
+          <div>
+            <div class="node-top">
+              <span class="node-number">${sec.badge}</span>
+              <span class="node-tag">Bấm để mở sách 📖</span>
+            </div>
+            <h3 class="node-red-title">${sec.redTitle}</h3>
+            <p class="node-preview">${sec.preview}</p>
+            <div class="node-sub-pills">
+              ${sec.subPills.map(p => `<span class="sub-pill">${p}</span>`).join('')}
+            </div>
+          </div>
+          <div class="node-footer">
+            <span>Xem toàn bộ nội dung</span>
+            <span>➔</span>
+          </div>
+        </article>
+      `).join('');
+
+      select.innerHTML = INFOGRAPHIC_SECTIONS.map((sec, idx) =>
+        `<option value="${idx}">${idx + 1}. ${sec.redTitle}</option>`
+      ).join('');
+    }
+
+    function splitOversizedBlock(htmlBlock, measurer, maxHeight) {
+      measurer.innerHTML = htmlBlock;
+      if (measurer.scrollHeight <= maxHeight) {
+        return [htmlBlock];
+      }
+
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = htmlBlock;
+      const el = tempDiv.firstElementChild;
+      if (!el || el.tagName !== 'P') {
+        return [htmlBlock];
+      }
+
+      const words = el.innerHTML.split(' ');
+      const chunks = [];
+      let currentWords = [];
+
+      for (let i = 0; i < words.length; i++) {
+        currentWords.push(words[i]);
+        const testHTML = `<p>${currentWords.join(' ')}</p>`;
+        measurer.innerHTML = testHTML;
+        if (measurer.scrollHeight > maxHeight && currentWords.length > 1) {
+          currentWords.pop();
+          chunks.push(`<p>${currentWords.join(' ')}</p>`);
+          currentWords = [words[i]];
+        }
+      }
+      if (currentWords.length > 0) {
+        chunks.push(`<p>${currentWords.join(' ')}</p>`);
+      }
+      return chunks;
+    }
+
+    function paginateCurrentSection() {
+      const section = INFOGRAPHIC_SECTIONS[currentSectionIndex];
+      const leftContentEl = document.getElementById('leftPageContent');
+      const measurer = document.getElementById('pageMeasurer');
+
+      const pageWidth = leftContentEl.clientWidth || 440;
+      const pageHeight = leftContentEl.clientHeight || 460;
+
+      measurer.style.width = pageWidth + 'px';
+      measurer.style.fontSize = currentFontSize + 'px';
+      measurer.className = 'page-body-content';
+
+      const pages = [];
+      let currentPageHTML = '';
+
+      const normalizedBlocks = [];
+      section.blocks.forEach(block => {
+        const parts = splitOversizedBlock(block, measurer, pageHeight);
+        normalizedBlocks.push(...parts);
+      });
+
+      normalizedBlocks.forEach(block => {
+        const candidate = currentPageHTML + block;
+        measurer.innerHTML = candidate;
+        if (measurer.scrollHeight > pageHeight && currentPageHTML !== '') {
+          pages.push(currentPageHTML);
+          currentPageHTML = block;
+        } else {
+          currentPageHTML = candidate;
+        }
+      });
+
+      if (currentPageHTML !== '') {
+        pages.push(currentPageHTML);
+      }
+
+      paginatedPages = pages.length > 0 ? pages : ['<p>Đang tải nội dung...</p>'];
+    }
+
+    function renderBookSpread() {
+      const singleMode = isSinglePageMode();
+      const pagesPerView = singleMode ? 1 : 2;
+      const totalPages = paginatedPages.length;
+      const maxSpread = Math.max(0, Math.ceil(totalPages / pagesPerView) - 1);
+
+      if (currentSpreadIndex > maxSpread) {
+        currentSpreadIndex = maxSpread;
+      }
+
+      const leftIdx = currentSpreadIndex * pagesPerView;
+      const rightIdx = leftIdx + 1;
+
+      const section = INFOGRAPHIC_SECTIONS[currentSectionIndex];
+      document.getElementById('leftHeaderTitle').textContent = section.badge;
+      document.getElementById('rightHeaderTitle').textContent = section.redTitle;
+
+      document.getElementById('leftPageContent').innerHTML = paginatedPages[leftIdx] || '';
+      document.getElementById('leftPageNum').textContent = `Trang ${leftIdx + 1} / ${totalPages}`;
+
+      if (!singleMode) {
+        if (rightIdx < totalPages) {
+          document.getElementById('rightPageContent').innerHTML = paginatedPages[rightIdx];
+          document.getElementById('rightPageNum').textContent = `Trang ${rightIdx + 1} / ${totalPages}`;
+        } else {
+          document.getElementById('rightPageContent').innerHTML = `
+            <div style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#8c6b53; padding:20px;">
+              <div style="font-size:38px; margin-bottom:10px;">❦</div>
+              <p style="font-family:'Playfair Display', serif; font-size:calc(var(--font-size-content)*1.05); color:#8b1e24; font-weight:700;">
+                Hết mục: ${section.redTitle}
+              </p>
+              <p style="font-size:14px; margin-top:6px;">
+                Bạn có thể bấm chuyển sang ô tiếp theo hoặc quay về Trang chủ Infographic.
+              </p>
+            </div>
+          `;
+          document.getElementById('rightPageNum').textContent = `Hết mục`;
+        }
+      }
+
+      if (singleMode || totalPages === 1) {
+        document.getElementById('pageIndicator').textContent = `Trang ${leftIdx + 1} / ${totalPages}`;
+      } else {
+        const endPage = Math.min(rightIdx + 1, totalPages);
+        document.getElementById('pageIndicator').textContent = `Trang ${leftIdx + 1}–${endPage} / ${totalPages}`;
+      }
+
+      document.getElementById('btnPrevPage').disabled = (currentSpreadIndex === 0);
+      document.getElementById('btnNextPage').disabled = (currentSpreadIndex >= maxSpread);
+
+      const btnNextSec = document.getElementById('btnNextSection');
+      if (currentSpreadIndex >= maxSpread && currentSectionIndex < INFOGRAPHIC_SECTIONS.length - 1) {
+        btnNextSec.style.display = 'inline-flex';
+      } else {
+        btnNextSec.style.display = 'none';
+      }
+    }
+
+    function openSection(index) {
+      currentSectionIndex = index;
+      currentSpreadIndex = 0;
+
+      document.getElementById('homeView').style.display = 'none';
+      document.getElementById('bookView').style.display = 'flex';
+      document.getElementById('sectionSelect').value = String(index);
+
+      requestAnimationFrame(() => {
+        paginateCurrentSection();
+        renderBookSpread();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    function goHome() {
+      document.getElementById('bookView').style.display = 'none';
+      document.getElementById('homeView').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function turnPage(direction) {
+      const singleMode = isSinglePageMode();
+      const pagesPerView = singleMode ? 1 : 2;
+      const maxSpread = Math.max(0, Math.ceil(paginatedPages.length / pagesPerView) - 1);
+      const targetSpread = currentSpreadIndex + direction;
+
+      if (targetSpread < 0 || targetSpread > maxSpread) return;
+
+      const overlay = document.getElementById('flipOverlay');
+      overlay.className = 'flip-overlay';
+      void overlay.offsetWidth;
+
+      overlay.classList.add(direction > 0 ? 'flip-next-anim' : 'flip-prev-anim');
+
+      setTimeout(() => {
+        currentSpreadIndex = targetSpread;
+        renderBookSpread();
+      }, 220);
+    }
+
+    function goToNextSection() {
+      if (currentSectionIndex < INFOGRAPHIC_SECTIONS.length - 1) {
+        openSection(currentSectionIndex + 1);
+      }
+    }
+
+    function changeFontSize(delta) {
+      const nextSize = Math.min(26, Math.max(14, currentFontSize + delta));
+      if (nextSize === currentFontSize) return;
+      currentFontSize = nextSize;
+      applyFontSizeAndReflow();
+    }
+
+    function resetFontSize() {
+      currentFontSize = 18;
+      applyFontSizeAndReflow();
+    }
+
+    function applyFontSizeAndReflow() {
+      document.documentElement.style.setProperty('--font-size-content', currentFontSize + 'px');
+      document.getElementById('fontSizeDisplay').textContent = currentFontSize + 'px';
+
+      if (document.getElementById('bookView').style.display === 'flex') {
+        paginateCurrentSection();
+        renderBookSpread();
+      }
+    }
+
+    function handleCustomAuthorImage(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('authorPortrait').src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    window.addEventListener('resize', () => {
+      if (document.getElementById('bookView').style.display === 'flex') {
+        paginateCurrentSection();
+        renderBookSpread();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (document.getElementById('bookView').style.display === 'flex') {
+        if (e.key === 'ArrowRight') turnPage(1);
+        if (e.key === 'ArrowLeft') turnPage(-1);
+        if (e.key === 'Escape') goHome();
+      }
+    });
+
+    initInfographic();
+  </script>
+</body>
+</html>
